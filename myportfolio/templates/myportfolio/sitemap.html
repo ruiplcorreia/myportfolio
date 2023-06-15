@@ -1,0 +1,60 @@
+{% extends 'myportfolio/base.html' %}
+
+{% load static %}
+<script src="{% static 'myportfolio/js/scripts.js' %}"></script>
+
+{% block hero %}
+
+
+<div>
+    <hr>
+    <h3 id="active">Senior DevOps Engineer</h3>
+    <p id="active" style="font-style: italic;">"I am a pessimist by nature.<br>
+        Many people can only keep on fighting when they expect to win.<br>
+        I'm not like that, I always expect to lose.<br>
+        I fight anyway, and sometimes I win."<br></p>
+    <p style="font-size:11px;font-style: italic;">"Richard Stallman"</p>
+</div>
+
+{% endblock %}
+
+{% block title %}
+
+<h1>Site Map</h1>
+
+{% endblock %}
+
+
+{% block main %}
+<div class="sitemapdiv">
+
+    <h2><a href="{% url 'myportfolio:home' %}">Home</a></h2>
+
+    <h2>About me</h2>
+    <ul>
+        <li><a href="{% url 'myportfolio:degree' %}">Degree</a></li>
+        <li><a href="{% url 'myportfolio:education' %}">Education</a></li>
+        <li><a href="{% url 'myportfolio:skills' %}">Skills</a></li>
+        <li><a href="{% url 'myportfolio:interests' %}">Interests and Hobbies</a></li>
+        <li><a href="{% url 'myportfolio:profexperience' %}">Professional Experience</a></li>
+    </ul>
+
+    <h2>Projects</h2>
+    <ul>
+        <li><a href="{% url 'myportfolio:collegeproj' %}">College Projects</a></li>
+        <li><a href="{% url 'myportfolio:myprojects' %}">My Projects</a></li>
+        <li><a href="{% url 'myportfolio:finalprojects' %}">TFC Projects</a></li>
+    </ul>
+    <h2>About</h2>
+    <ul>
+        <li><a href="{% url 'myportfolio:testimonials' %}">Testimonials</a></li>
+        <li><a href="{% url 'myportfolio:blog' %}" target="_blank">Blog</a></li>
+        <ul>
+            <h2>WebProgramming</h2>
+            <li><a href="{% url 'myportfolio:atechnologies' %}">Technologies</a></li>
+            <li><a href="{% url 'myportfolio:astandards' %}">Standards</a></li>
+        </ul>
+    </ul>
+</div>
+
+{% endblock %}

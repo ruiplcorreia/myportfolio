@@ -1,0 +1,30 @@
+{% extends 'myportfolio/base.html' %}
+
+{% load static %}
+
+{% block hero %}
+
+<div>
+    <hr>
+    <h3 id="active">post</h3>
+</div>
+
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+
+
+{% block main %}
+
+<h1>Edit Post</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update post</button>
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'myportfolio/base.html' %}
+
+{% load static %}
+
+
+{% block title %}
+<h1>Blog</h1>
+{% endblock %}
+
+
+{% block main %}
+<article>
+    <ul>
+        {% for post in posts %}
+
+        <li>
+            <p>Title: {{ post.title }}</p>
+            <p>Author: {{ post.author }}</p>
+            <p>Date: {{ post.created_at }}</p>
+            <p>Image {{ post.image }}</p>
+            {% if post.image %}
+            <img src="{{ post.image.url }}" maxweight="50px" max height="50px" alt="{{ post.image.url }} Logo">
+            {% else %}
+
+            <img src="/static/myportfolio/img/default.png" maxweight="50px" max height="50px" alt="NoLogo">
+            {% endif %}
+
+            <p>Description: {{ post.description }}</p>
+            {% if user.is_authenticated %}
+            <a href="{% url 'myportfolio:post_edit' post.id %}">Edit Post</a><br>
+            <a href="{% url 'myportfolio:post_delete' post.id %}">Delete Post</a>
+            {% endif %}
+        </li>
+
+        {% empty %}
+        <p>No posts yet.</p>
+        {% endfor %}
+    </ul>
+
+</article>
+
+{% if user.is_authenticated %}
+<a href="{% url 'myportfolio:new_post' %}" class="btn btn-success">New Post</a>
+{% endif %}
+
+{% endblock %}

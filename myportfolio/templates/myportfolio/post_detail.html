@@ -1,0 +1,20 @@
+{% extends 'myportfolio/base.html' %}
+
+{% block main %}
+
+<h1>Blog Posts</h1>
+<ul>
+  {% for post.pk = posts.pk %}
+  <li>
+    <p>Title: {{ post.title }}</p>
+    <p>Author: {{ post.author }}</p>
+    <p>Date: {{ post.created_at }}</p>
+    <p>Image {{ post.image }}</p>
+    <img src="{% static '{{post.image}}'%}" alt="">
+    <p>Description: {{ post.description }}</p>
+  </li>
+  {% empty %}
+  <p>No posts yet.</p>
+  {% endfor %}
+</ul>
+{% endblock %}

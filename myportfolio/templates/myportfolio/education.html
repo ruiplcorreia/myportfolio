@@ -1,0 +1,72 @@
+{% extends 'myportfolio/base.html' %}
+
+{% load static %}
+
+{% block hero %}
+
+<div>
+    <hr>
+    <h3 id="active">Education</h3>
+</div>
+
+{% endblock %}
+
+{% block title %}
+
+<h3 id="degree">See my path bellow</h3>
+
+
+{% endblock %}
+
+
+{% block main %}
+
+<h1>Education</h1>
+{% if user.is_authenticated %}
+<a href="{% url 'myportfolio:create_education' %}">Create Education</a>
+{% endif %}
+
+<div class="container-box">
+    <div class="row">
+
+        {% for institution in institution %}
+        <div class="column">
+            <div class="content-education">
+
+                {% if institution.logo %}
+                <img src="{{ institution.logo.url }}" maxweight="50px" max height="50px" alt="{{ school.name }} Logo">
+                {% else %}
+
+                <img src="/static/myportfolio/img/default.png" maxweight="50px" max height="50px"
+                    alt="{{ school.name }} NoLogo">
+                {% endif %}
+                <h2>School name:</h2>
+                {{ institution.name }}
+
+                <p>Location:</p>
+                {{ institution.location }}
+
+                <p>Webpage:</p>
+                {% if institution.webpage %}
+                {{ institution.webpage }}
+                {% else %}
+                <p>None</p>
+                {% endif %}
+
+                {% if user.is_authenticated %}
+
+                <a href="{% url 'myportfolio:aeedit' institution.id %}">Edit School</a>
+                <a href="{% url 'myportfolio:delete_education' institution.id %}">Delete School</a>
+
+                {% endif %}
+
+
+
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'myportfolio/base.html' %}
+
+{% load static %}
+
+{% block hero %}
+
+<div>
+    <hr>
+    <h3 id="active">Degree</h3>
+</div>
+
+{% endblock %}
+
+{% block title %}
+
+<h3 id="degree">My path in</h3>
+
+
+{% endblock %}
+
+
+{% block main %}
+
+<h1>ADD DEGREE</h1>
+
+
+
+<h2>Confirm Deletion</h2>
+<p>Are you sure you want to delete the degree: {{ degree.name }}?</p>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Delete</button>
+    <button onclick="history.back()">Go Back</button>
+</form>
+
+
+{% endblock %}

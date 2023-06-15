@@ -1,0 +1,99 @@
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.changeTheme {
+  background: #1D1E22;
+  color: #eee;
+}
+
+.light-mode {
+  background-color: white;
+  color: black;
+}
+
+header p {
+  font-style: italic;
+  color: gray;
+}
+
+main {
+  width: 800px;
+  margin: auto;
+  padding: 20px;
+  list-style: none;
+
+}
+
+main ul {
+  list-style: none;
+}
+
+main p {
+  text-align: left;
+  padding: 20px;
+  margin: 10px;
+
+
+}
+
+nav {
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #e6e6e6;
+}
+
+
+/* 
+
+body.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+a {
+    color: black;
+}
+
+button {
+    background-color: white;
+    color: black;
+}
+
+
+body.light-mode {
+  background-color: white;
+  color: black;
+}
+
+a {
+    color: black;
+}
+
+button {
+    background-color: black;
+    color: white;
+}
+ */

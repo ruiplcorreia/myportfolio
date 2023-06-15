@@ -1,0 +1,40 @@
+{% extends 'myportfolio/base.html' %}
+
+{% load static %}
+
+{% block hero %}
+
+
+<div>
+    <hr>
+    <h3 id="active">Education</h3>
+</div>
+
+{% endblock %}
+
+{% block title %}
+
+<h3 id="education">My path in education</h3>
+
+
+{% endblock %}
+
+
+{% block main %}
+<div>
+    <h1>tbackend</h1>
+
+
+    {% for school in schools %}
+    
+        <img src="{{ school.logo.url }}" maxweight="50px" max height="50px" alt="{{ school.name }} Logo">
+        <br>
+        <p>{{ school.name }}</p>
+        <p>{{ school.location }}</p>
+        <p>{{ school.start_date }}</p>
+        <p>{{ school.end_date }}</p>
+
+    {% endfor %}
+</div>
+
+{% endblock %}

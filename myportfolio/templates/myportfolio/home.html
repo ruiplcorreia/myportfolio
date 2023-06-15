@@ -1,0 +1,54 @@
+{% extends 'myportfolio/base.html' %}
+
+{% load static %}
+<script src="{% static 'myportfolio/js/scripts.js' %}"></script>
+
+{% block hero %}
+
+
+<div>
+    <hr>
+    <h3 id="active">Senior DevOps Engineer</h3>
+    <a rel="noopener" href="#workwithme">WorkWithMe!</a>
+    <p id="active" style="font-style: italic;">"I am a pessimist by nature.<br>
+        Many people can only keep on fighting when they expect to win.<br>
+        I'm not like that, I always expect to lose.<br>
+        I fight anyway, and sometimes I win."<br></p>
+    <p style="font-size:11px;font-style: italic;">"Richard Stallman"</p>
+</div>
+
+{% endblock %}
+
+{% block title %}
+<h1>Get to know me</h1>
+{% endblock %}
+
+
+{% block main %}
+
+<div class="aboutme_div">
+    I started working in a callcenter back in 2005 as an outbound operator which was a challenge for me but provided me
+    with skills and experience to deal with costumers/users by phone.<br><br>
+
+    After this I began working on a consulting company where I was responsible for field interventions in several
+    clients and later on I've also worked in the same company but in outsourcing as an internal helpdesk technician
+    responsible for user direct support using a ticketing application for tasks management.
+    Although I liked my job, I wanted to evolve in the support area so I started looking for new challenges and embraced
+    a new challenge in a different company where the workstations, network management and systems administration were my
+    responsibilities.
+    At this point I started working with network management tools, GPO's, telephony servers, SQL programming and also
+    DHCP and proxy servers.<br><br>
+
+    A new opportunity appeared and I changed once again into the military area, where I've worked also in the IT
+    support.
+    I've developed skills within network support, remote support, security using specific applications by novell and
+    user accounts management.
+    For four years I've worked on the OSS Support area for the Celfocus | Novabase group in the Vodafone Ireland - SIRO
+    project.
+    During this period I travelled a lot, developed my leadership skills by managing a 10 person DevOps team including
+    Operations team and QA and learned how to manage a project as a PM.<br><br>
+
+    Now I'm working for Siemens as a Senior DevOps engineer developing the CI/CD infrastruture for our costumers.
+</div>
+
+{% endblock %}

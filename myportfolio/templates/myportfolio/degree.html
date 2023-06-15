@@ -1,0 +1,76 @@
+{% extends 'myportfolio/base.html' %}
+
+{% load static %}
+
+{% block hero %}
+
+<div>
+    <hr>
+    <h3 id="active">Degree</h3>
+</div>
+
+{% endblock %}
+
+{% block title %}
+
+<h3 id="degree">My path in</h3>
+
+
+{% endblock %}
+
+
+{% block main %}
+
+<h1>DEGREE</h1>
+{% if user.is_authenticated %}
+<a href="{% url 'myportfolio:create_degree' %}">Create Degree</a>
+{% endif %}
+
+<div class="container-box">
+    <div class="row">
+        {% for degree in degrees %}
+        <div class="column">
+            <div class="content-education">
+
+                <h2>{{ degree.name }}</h2>
+                <p>ID {{ degree.id }}</p>
+                <p>{{ degree.institution }}</p>
+                <p>{{ degree.start_date}} - {{ degree.end_date }}</p>
+
+                <button type="button" class="collapsible">Years</button>
+                <div class="content">
+
+                    <ul>
+
+                        {% for class in degree.classes.all %}
+                        <li>
+                            Class Name: {{ class.name }}<br>
+                            Year: {{ class.year }}, Semester: {{ class.semester }}<br>
+                            Teachers:
+                            <ul>
+                                {% for teacher in class.teachers.all %}
+                                <li>{{ teacher.name }}</li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        {% endfor %}
+
+                    </ul>
+                </div>
+                {% if user.is_authenticated %}
+
+                <a href="{% url 'myportfolio:adedit' degree.id %}">Edit Degree</a>
+                <a href="{% url 'myportfolio:delete_degree' degree.id %}">Delete Degree</a>
+
+                {% endif %}
+
+
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+
+{% endblock %}
